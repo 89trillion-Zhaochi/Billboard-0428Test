@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2520506185887551146}
   - component: {fileID: 8412158457017789369}
   - component: {fileID: 3486004109905993602}
+  - component: {fileID: 7853287895643723705}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -80,6 +81,41 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7853287895643723705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609791680071378964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc53952621fa14edeafc9c54a5876cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rank: {fileID: 433331258724353380}
+  nickName: {fileID: 1265039353309193927}
+  trophy: {fileID: 5558907497830078463}
+  status: {fileID: 3264255703786273698}
+  statusSprites:
+  - {fileID: 21300000, guid: 579fcaeffab1742b4a087857ed7644a8, type: 3}
+  - {fileID: 21300000, guid: 6c02db311306e4eca8b3ef5d719c252b, type: 3}
+  - {fileID: 21300000, guid: f8212b6c9d8934e86999f305ac795939, type: 3}
+  - {fileID: 21300000, guid: c4964d07677c14886b58c65e8ec23b82, type: 3}
+  - {fileID: 21300000, guid: 78b60a5fe090c4ee6af6e944bd57b374, type: 3}
+  - {fileID: 21300000, guid: 88e2798b9869e4b44a057d3dad141f1a, type: 3}
+  - {fileID: 21300000, guid: 098c75a3ab7884aa39080e53ba9e5689, type: 3}
+  - {fileID: 21300000, guid: 53f70f1fdfe9a429cbad9baebb48ff3b, type: 3}
+  - {fileID: 21300000, guid: 5fd90c89eedae443eb8e59f5a87c2651, type: 3}
+  - {fileID: 21300000, guid: 1c69ea18f104a482ca275cce9ad1003a, type: 3}
+  - {fileID: 21300000, guid: 902ba251f5d664dddb39118b57847eb7, type: 3}
+  - {fileID: 21300000, guid: 88e5ea2e5d60d4bcc9f05365eea880e8, type: 3}
+  - {fileID: 21300000, guid: b214f0f03063c4034bcf2d73715fe45d, type: 3}
+  - {fileID: 21300000, guid: f3fb9f9c6fef3450e9e54d31d891812c, type: 3}
+  rankSprites:
+  - {fileID: 21300000, guid: 1312c6a415fba4f5bb55018f80a094ae, type: 3}
+  - {fileID: 21300000, guid: 84f4eb707369749089a569b497b599ee, type: 3}
+  - {fileID: 21300000, guid: 2f6101778731146299c94a5cb160ebc3, type: 3}
 --- !u!1 &3899152241158512162
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +297,7 @@ GameObject:
   - component: {fileID: 4266473506957579743}
   - component: {fileID: 3264255703786273698}
   m_Layer: 5
-  m_Name: Rank (1)
+  m_Name: Status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
