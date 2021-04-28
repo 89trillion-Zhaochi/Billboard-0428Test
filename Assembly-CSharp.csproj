@@ -59,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Base\Singleton.cs" />
+     <Compile Include="Assets\Scripts\Base\UnitySingleton.cs" />
+     <Compile Include="Assets\Scripts\Data\DailySelectionItemJsonData.cs" />
+     <Compile Include="Assets\Scripts\Data\JsonDataManager.cs" />
+     <Compile Include="Assets\Scripts\UI\Billboard.cs" />
+     <Compile Include="Assets\Scripts\UI\Root.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>/Users/zhaochi/Billboard-0428Test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
