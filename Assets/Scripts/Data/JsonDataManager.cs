@@ -6,12 +6,12 @@ namespace Data
 {
     public class JsonDataManager:Singleton<JsonDataManager>//负责解析
     {
-        public void GetDataDSItem(ref DSItemData dsItemData,string jsonpath)//读取MyData类型的数据
+        public void GetDataDSItem(ref BillBoardData jsonData,string jsonpath)//读取MyData类型的数据
         {
-            var dailySelectionItemJsonTextAsset = Resources.Load(jsonpath) as TextAsset;
-            if (!(dailySelectionItemJsonTextAsset is null))
+            var jsonTextAsset = Resources.Load(jsonpath) as TextAsset;
+            if (!(jsonTextAsset is null))
             {
-                dsItemData = JsonUtility.FromJson<DSItemData>(dailySelectionItemJsonTextAsset.text);
+                jsonData = JsonUtility.FromJson<BillBoardData>(jsonTextAsset.text);
 
             }
         }
