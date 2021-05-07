@@ -6,8 +6,13 @@ namespace UI
 {
     public class CountDown : MonoBehaviour
     {
+        
+        /// <summary>
+        /// 倒计时所需的一些属性
+        /// </summary>
         public Text text;
-        public int totalTime = 835503;
+
+        public int totalTime;
         private int _day;
         private int _hour;
         private int _minute;
@@ -18,6 +23,9 @@ namespace UI
             yield return StartCoroutine(TimeCountDown());
         }
 
+        /// <summary>
+        /// 倒计时的协程实现
+        /// </summary>
         private IEnumerator TimeCountDown()
         {
         

@@ -7,7 +7,9 @@ namespace UI
         [SerializeField] private Transform rootTs;
         [SerializeField] private GameObject billboardPrefab;
         
-        //点击Root按钮事件
+        /// <summary>
+        /// root页面的单击事件
+        /// </summary>
         public void OpenButtonOnClick()
         {
             var chest = Instantiate(billboardPrefab, rootTs);

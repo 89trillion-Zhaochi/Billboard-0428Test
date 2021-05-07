@@ -12,9 +12,12 @@ namespace UI
         private BillBoardData _data;
         private BillBoardData _billBoardData;
         private bool _itemIsOpen;
-        private List<CustomData> _mDataList = null;
         [SerializeField] private Transform billboardTransform;
         
+        
+        /// <summary>
+        /// 创建排行榜
+        /// </summary>
         public void CreateItem()
         {
             if (_itemIsOpen == false)
@@ -29,13 +32,14 @@ namespace UI
                 Debug.Log("LoopListView2.InitListView method can be called only once.");
             }
         }
-
+        /// <summary>
+        /// 关闭排行榜
+        /// </summary>
         public void CloseItem()
         {
             
             _itemIsOpen = false;
             CloseButtonOnClick();
-            // _billBoardData.list.
             mLoopListView.RefreshAllShownItem();
         }
         
@@ -45,6 +49,9 @@ namespace UI
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
+        /// <summary>
+        /// 生成循环利用的item池
+        /// </summary>
         LoopListViewItem2 OnGetItemByIndex(LoopListView2 listView, int index)
         {
             if (index < 0 || index >= _billBoardData.list.Length)
@@ -52,7 +59,6 @@ namespace UI
                 return null;
             }
             LoopListViewItem2 item = listView.NewListViewItem("Item");
-            Debug.Log(index);
             ListItem listItem = item.GetComponent<ListItem>();
             if (item.IsInitHandlerCalled == false)
             {
