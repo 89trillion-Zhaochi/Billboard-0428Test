@@ -15,8 +15,6 @@ namespace UI
         private List<CustomData> _mDataList = null;
         [SerializeField] private Transform billboardTransform;
         
-       
-        
         public void CreateItem()
         {
             if (_itemIsOpen == false)

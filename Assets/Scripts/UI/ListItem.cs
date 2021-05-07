@@ -14,12 +14,20 @@ namespace UI
         [SerializeField] private Image status; //排名图标
         [SerializeField] private List<Sprite> statusSprites;
         [SerializeField] private List<Sprite> rankSprites;
+        private string uid;
 
+        public void Click()
+        {
+            Toast.Instance.ShowToast($"User: {uid}, Rank: {rankText.text}");
+        }
         public void SetItemData(int index)
         {
+            
             ItemData itemData = DataSourceMgr.Get.GetItemDataByIndex(index);
+            uid = itemData.uid;
             nickName.text = itemData.nickName;
             trophy.text = itemData.trophy.ToString();
+            rankText.text = (itemData.rankNum + 1).ToString();
             if (itemData.rankNum < 3)
             {
                 rank.gameObject.SetActive(true);
@@ -28,7 +36,7 @@ namespace UI
             else
             {
                 rank.gameObject.SetActive(false);
-                rankText.text = (itemData.rankNum + 1).ToString();
+                
             }
 
             status.sprite = statusSprites[itemData.status];
