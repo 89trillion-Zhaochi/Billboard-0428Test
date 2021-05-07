@@ -1,22 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Data;
 namespace SuperScrollView
 {
 
     public class ItemData
     {
-        public int mId;
-        public string mName;
-        public int mFileSize;
-        public string mDesc;
-        public string mIcon;
-        public int mStarCount;
+        public string uid;
+        public string nickName;
+        public int trophy;
+        public int status;
+        public int rankNum;
         public bool mChecked;
         public bool mIsExpand;
-    }
+        public int mStarCount;
 
+    }
+    
     public class DataSourceMgr : MonoBehaviour
     {
 
@@ -29,6 +30,8 @@ namespace SuperScrollView
         bool mIsWaittingRefreshData = false;
         bool mIsWaitLoadingMoreData = false;
         public int mTotalDataCount = 42;
+        private BillBoardData _data;
+        private BillBoardData _billBoardData;
 
         static DataSourceMgr instance = null;
 
@@ -53,6 +56,7 @@ namespace SuperScrollView
 
         public void Init()
         {
+            JsonDataManager.Instance.GetDataDSItem(ref _billBoardData, "Json/ranklist");
             DoRefreshDataSource();
         }
 
@@ -68,14 +72,7 @@ namespace SuperScrollView
         public ItemData GetItemDataById(int itemId)
         {
             int count = mItemDataList.Count;
-            for (int i = 0; i < count; ++i)
-            {
-                if(mItemDataList[i].mId == itemId)
-                {
-                    return mItemDataList[i];
-                }
-            }
-            return null;
+            return mItemDataList[itemId];
         }
 
         public int TotalItemCount
@@ -162,12 +159,11 @@ namespace SuperScrollView
             for (int i = 0; i < mTotalDataCount; ++i)
             {
                 ItemData tData = new ItemData();
-                tData.mId = i;
-                tData.mName = "Item" + i;
-                tData.mDesc = "Item Desc For Item " + i;
-                tData.mIcon = ResManager.Get.GetSpriteNameByIndex(Random.Range(0, 24));
-                tData.mStarCount = Random.Range(0, 6);
-                tData.mFileSize = Random.Range(20, 999);
+                tData.uid = _billBoardData.list[i].uid;
+                tData.nickName = _billBoardData.list[i].nickName;
+                tData.trophy = _billBoardData.list[i].trophy;
+                tData.rankNum = i;
+                tData.status = _billBoardData.list[i].trophy/1000+1;
                 tData.mChecked = false;
                 tData.mIsExpand = false;
                 mItemDataList.Add(tData);
@@ -181,12 +177,11 @@ namespace SuperScrollView
             {
                 int i = k + count;
                 ItemData tData = new ItemData();
-                tData.mId = i;
-                tData.mName = "Item" + i;
-                tData.mDesc = "Item Desc For Item " + i;
-                tData.mIcon = ResManager.Get.GetSpriteNameByIndex(Random.Range(0, 24));
-                tData.mStarCount = Random.Range(0, 6);
-                tData.mFileSize = Random.Range(20, 999);
+                tData.uid = _billBoardData.list[i].uid;
+                tData.nickName = _billBoardData.list[i].nickName;
+                tData.trophy = _billBoardData.list[i].trophy;
+                tData.rankNum = i;
+                tData.status = _billBoardData.list[i].trophy/1000+1;
                 tData.mChecked = false;
                 tData.mIsExpand = false;
                 mItemDataList.Add(tData);

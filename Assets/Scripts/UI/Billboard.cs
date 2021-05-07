@@ -38,14 +38,16 @@ namespace UI
                 mLoopListView.InitListView(_billBoardData.list.Length,OnGetItemByIndex);
                 _itemIsOpen = true;
             }
-           
-            
+            else
+            {
+                Debug.Log("LoopListView2.InitListView method can be called only once.");
+            }
         }
 
         public void CloseItem()
         {
             _itemIsOpen = false;
-            mLoopListView
+            //mLoopListView.
         }
         public void CloseButtonOnClick()
         {
@@ -60,12 +62,16 @@ namespace UI
                 return null;
             }
             LoopListViewItem2 item = listView.NewListViewItem("Item");
+            Debug.Log(index);
             ListItem listItem = item.GetComponent<ListItem>();
             if (item.IsInitHandlerCalled == false)
             {
                 item.IsInitHandlerCalled = true;
-                listItem.ChildData = new TestChildData(_billBoardData.list[index%42], index%42);
+                listItem.Init();
+                
+                //listItem.ChildData = new TestChildData(_billBoardData.list[index%42], index%42);
             }
+            listItem.SetItemData(index);
             return item;
         }
     }
