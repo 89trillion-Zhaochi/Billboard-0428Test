@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\Data\JsonData.cs" />
      <Compile Include="Assets\Scripts\Data\JsonDataManager.cs" />
      <Compile Include="Assets\Scripts\UI\Billboard.cs" />
+     <Compile Include="Assets\Scripts\UI\CountDown.cs" />
      <Compile Include="Assets\Scripts\UI\ListItem.cs" />
      <Compile Include="Assets\Scripts\UI\Root.cs" />
      <Compile Include="Assets\SuperScrollView\Demo\Scripts\Common\AutoSetAnchorPosForIphonex.cs" />

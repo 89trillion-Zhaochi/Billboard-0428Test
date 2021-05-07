@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace UI
 {
     public class Root : MonoBehaviour
     {
         [SerializeField] private Transform rootTs;
-
         [SerializeField] private GameObject billboardPrefab;
+        
         //点击Root按钮事件
         public void OpenButtonOnClick()
         {

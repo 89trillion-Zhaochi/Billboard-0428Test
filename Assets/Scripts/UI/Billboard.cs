@@ -5,30 +5,18 @@ using UnityEngine;
 
 namespace UI
 {
-   
-    class CustomData
-    {
-        public string mContent;
-    }
     public class Billboard : MonoBehaviour
     {
-        [SerializeField] private Transform billboardTransform;
-        [SerializeField] private RectTransform content;
         public LoopListView2 mLoopListView;
-        //从这开始写更新列表的部分
+        
         private BillBoardData _data;
         private BillBoardData _billBoardData;
-        private bool _itemIsOpen = false; 
+        private bool _itemIsOpen;
+        private List<CustomData> _mDataList = null;
+        [SerializeField] private Transform billboardTransform;
         
-        List<CustomData> mDataList = null;
-
-        public Vector2 ItemRect => new Vector2(968, 146);
-
-        public void SetContent(int length)
-        {
-            content.sizeDelta = new Vector2(ItemRect.x,length*ItemRect.y);
-        }
        
+        
         public void CreateItem()
         {
             if (_itemIsOpen == false)
@@ -46,9 +34,13 @@ namespace UI
 
         public void CloseItem()
         {
+            
             _itemIsOpen = false;
-            //mLoopListView.
+            CloseButtonOnClick();
+            // _billBoardData.list.
+            mLoopListView.RefreshAllShownItem();
         }
+        
         public void CloseButtonOnClick()
         {
             Destroy(billboardTransform.gameObject);
@@ -67,9 +59,6 @@ namespace UI
             if (item.IsInitHandlerCalled == false)
             {
                 item.IsInitHandlerCalled = true;
-                listItem.Init();
-                
-                //listItem.ChildData = new TestChildData(_billBoardData.list[index%42], index%42);
             }
             listItem.SetItemData(index);
             return item;
